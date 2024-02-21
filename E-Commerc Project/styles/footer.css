@@ -1,0 +1,57 @@
+/*                                      Footer Style                                        */
+/* Footer styles */
+footer {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #A52A2A;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Footer content container */
+.footer-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Footer sections (Customer Care, Contact, Follow Us) */
+.footer-section {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+}
+
+.follow-us {
+    text-align: right;
+}
+
+    /* Follow Us section with social icons */
+    .follow-us .social-icons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+/* Style for social media icons (replace with actual icons) */
+.social-icons img {
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+}
+
+/* Copyright text at the bottom */
+.copyright {
+    position: absolute;
+    bottom: 0;
+    font-size: 18px;
+}

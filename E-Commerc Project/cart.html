@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+ <html lang="en">
+    <head>
+ <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/footer.css">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+         <style>
+        .admin {
+            display: flex;
+            justify-content: flex-end;
+            padding: 0.5rem;
+        }
+
+            .admin a {
+                display: block;
+                width: 90px;
+                text-decoration: none;
+                text-align: center;
+                padding: 9px 3px;
+                background-color: brown;
+                color: white;
+            }
+
+        .table {
+            width: 98%;
+            border: solid 1px lightgray;
+            border-collapse: collapse;
+        }
+
+            .table th, td {
+                padding: .5rem;
+                border: solid 1px lightgray;
+            }
+    </style>
+    <script>
+        $(() => {
+
+            var carts = sessionStorage.getItem("cart")
+                ? JSON.parse(sessionStorage.getItem("cart"))
+                : [];
+            var total = 0;
+            carts.forEach(c => {
+                total += Number(c.price) * Number(c.qty);
+                $('#tbody').append(`
+                    <tr>
+                            <td>${c.name}</td>
+                            <td>${c.price}</td>
+                            <td>${c.qty}</td>
+                            <td>${Number(c.price) * Number(c.qty)}</td>
+                        </tr>
+                    `);
+
+            });
+            $('#tbody').append(`
+                        <tr>
+                            <td colspan="3"></td>
+                            <td>${total}</td>
+                        </tr>
+                    `)
+
+        });
+    </script>
+           <link rel="stylesheet" href="style.css ">    
+    </head>
+    <body>
+        <header>
+            <div class="overlay"></div>
+            <nav>
+                <h2>SHOP</h2>
+<div class="admin">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="cart.html">Cart</a>
+                    </li>
+                </ul>
+</div>
+            </nav>
+        </header>
+        <div class="container main">
+
+        <h3>Cart Items</h3>
+        <div class="my-2">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+   <footer>
+        <div class="footer-content">
+           
+            <div class="footer-section contact">
+                <h4>Contact</h4>
+                <address>
+                    Bus Buy.<br>
+                    Korea<br>
+                    Email: koreaBus@gmail.com<br>
+                    Phone: (123)KKK
+                </address>
+            </div>
+            
+        </div>
+        <div class="copyright">
+            <b>&copy; 2023 BUS Buy</b>
+        </div>
+    </footer>
+</body>
+</html>
