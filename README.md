@@ -33,7 +33,7 @@ To install and run this project, follow these steps:
 4. Write **node app.js** in the cmd to run the server.
 5. Now copy the url for example, `https://localhost:44302/` of local host and paste it in any browser.
 6. Use the application.
-## Usage
+
 
 # Usage
 
